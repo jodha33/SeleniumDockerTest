@@ -1,6 +1,10 @@
 node{
     stage('Git Checkout'){
-        git 'https://github.com/jodha33/SeleniumDockerTest'
+        steps{
+            checkout scm
+        }
+        //git 'https://github.com/jodha33/SeleniumDockerTest'
+
     }
     stage('Build'){
         try{
