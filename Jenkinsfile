@@ -1,20 +1,29 @@
-node{
-    stage('Git Checkout'){
-        steps{
-            checkout scm
-        }
-        //git 'https://github.com/jodha33/SeleniumDockerTest'
+pipeline{
+
+    agent{
+            docker{
+                image 'jodha33/seltest'
+                  label 'dind'
+	              args "-v /tmp:/tmp"
+            }
 
     }
-    stage('Build'){
-        try{
-        }catch(err){
-        }finally{
-            publishHTML (target: [
-                        reportDir: 'target/surefire-reports',
-                        reportFiles: 'index.html',
-                        reportName: "UI tests report"
-                        ])
+
+    stages{
+        stage('Checkout'){
+            steps {
+                script {
+                    checkout scm
+                }
+            }
+        }
+        stage('Test Exection'){
+            steps{
+                script {
+                    echo "Executing test"
+                    sh 'mvn test'
+                }
+            }
         }
     }
 }
