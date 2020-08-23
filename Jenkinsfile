@@ -1,7 +1,7 @@
 pipeline{
 
     agent{
-            docker{
+            docker-agent{
                 image 'jodha33/seltest'
                   label 'dind'
 	              args "-v /tmp:/tmp"
