@@ -1,5 +1,5 @@
 pipeline{
-    agent none
+    agent master
     // agent{
     //         // docker{
     //         //     image 'jodha33/seltest'
