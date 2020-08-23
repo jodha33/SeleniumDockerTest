@@ -25,11 +25,11 @@ pipeline{
 
                 publishHTML (target: [
                         allowMissing: false,
-                        alwaysLinkToLastBuild: false,
+                        alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: './target/surefire-reports',
+                        reportDir: 'surefire-reports',
                         reportFiles: 'index.html',
-                        reportName: "RCov Report"
+                        reportName: "Test Execution Report"
                 ])
             }
         }
