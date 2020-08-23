@@ -36,12 +36,14 @@ pipeline{
             }
 
         }
-          post{
+       
+
+    }
+
+       post{
                     always {
                     step([$class: 'Publisher', reportFilenamePattern: './target/surefire-reports/testng-results.xml'])
                     }
-                    } 
-
-    }
+    } 
    
 }
