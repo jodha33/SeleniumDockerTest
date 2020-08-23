@@ -1,10 +1,7 @@
 pipeline {
-    agent{
-        label 'docker-agent'
-    }
+    agent none
     stages{
         stage('Build for 7'){
-            echo "Starting pipline"
             agent { docker 'openjdk:7'}
             steps {
                 sh "java -version"
