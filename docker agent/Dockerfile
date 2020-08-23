@@ -1,7 +1,7 @@
-FROM ubuntu
+FROM mcr.microsoft.com/java/maven
 RUN mkdir -p /var/run/sshd
-RUN apt -y update
-RUN apt install -y openjdk-8-jdk
+#RUN apt -y update
+#RUN apt install -y openjdk-8-jdk
 RUN apt install -y openssh-server
 RUN ssh-keygen -A
 ADD ./sshd_config /etc/ssh/sshd_config
