@@ -23,15 +23,23 @@ pipeline{
                     bat 'docker run jodha33/seltest:latest'
                 }
 
-                publishHTML (target: [
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: true,
-                        keepAll: true,
-                        reportDir: 'target/surefire-reports',
-                        reportFiles: 'index.html',
-                        reportName: "Test Execution Report"
-                ])
+                // publishHTML (target: [
+                //         allowMissing: false,
+                //         alwaysLinkToLastBuild: true,
+                //         keepAll: true,
+                //         reportDir: 'target/surefire-reports',
+                //         reportFiles: 'index.html',
+                //         reportName: "Test Execution Report"
+                // ])
+
+
             }
         }
+
+    }
+    post{
+           always {
+                        step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+            }
     }
 }
