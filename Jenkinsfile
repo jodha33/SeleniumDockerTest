@@ -31,15 +31,15 @@ pipeline{
                 //         reportFiles: 'index.html',
                 //         reportName: "Test Execution Report"
                 // ])
-
+                    post{
+                    always {
+                    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+                    }
+                    } 
 
             }
         }
 
     }
-    post{
-           always {
-                        step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
-            }
-    }
+   
 }

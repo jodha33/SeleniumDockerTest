@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-08-15T13:59:07 IST" name="Surefire suite" finished-at="2020-08-15T13:59:07 IST" duration-ms="60">
+  <suite name="Surefire suite" duration-ms="88" started-at="2020-08-23T21:56:10 IST" finished-at="2020-08-23T21:56:11 IST">
     <groups>
     </groups>
-    <test started-at="2020-08-15T13:59:07 IST" name="Surefire test" finished-at="2020-08-15T13:59:07 IST" duration-ms="60">
+    <test name="Surefire test" duration-ms="88" started-at="2020-08-23T21:56:10 IST" finished-at="2020-08-23T21:56:11 IST">
       <class name="TestExample">
-        <test-method signature="FirstTest()[pri:0, instance:TestExample@4d3167f4]" started-at="2020-08-15T13:59:07 IST" name="FirstTest" finished-at="2020-08-15T13:59:07 IST" duration-ms="6" status="PASS">
+        <test-method status="PASS" signature="FirstTest()[pri:0, instance:TestExample@42d80b78]" name="FirstTest" duration-ms="7" started-at="2020-08-23T21:56:11 IST" finished-at="2020-08-23T21:56:11 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FirstTest -->
