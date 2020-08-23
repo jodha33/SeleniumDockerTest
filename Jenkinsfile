@@ -19,7 +19,8 @@ pipeline{
             steps{
                 script {
                     echo "Executing test"
-                    bat 'docker build .'
+                    bat 'docker build -t jodha33/seltest:latest .'
+                    bat 'docker run jodha33/seltest:latest'
                 }
             }
         }
