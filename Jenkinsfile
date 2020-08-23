@@ -1,29 +1,11 @@
-pipeline{
-
-    agent{
-            docker{
-                image 'jodha33/seltest'
-                  label 'docker-agent'
-	              args "-v /tmp:/tmp"
-            }
-
-    }
-
+pipleline {
     stages{
-        stage('Checkout'){
-            steps {
-                script {
-                    checkout scm
-                }
-            }
+        stage('Build for 7'{
+            agent { docker 'openjdk:7'}
         }
-        stage('Test Exection'){
-            steps{
-                script {
-                    echo "Executing test"
-                    sh 'mvn test'
-                }
-            }
+        steps{
+            sh "java -version"
         }
     }
+
 }
