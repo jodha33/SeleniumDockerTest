@@ -27,7 +27,7 @@ pipeline{
                         allowMissing: false,
                         alwaysLinkToLastBuild: true,
                         keepAll: true,
-                        reportDir: 'surefire-reports',
+                        reportDir: 'target/surefire-reports',
                         reportFiles: 'index.html',
                         reportName: "Test Execution Report"
                 ])
