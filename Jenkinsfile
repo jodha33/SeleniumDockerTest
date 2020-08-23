@@ -1,11 +1,11 @@
 pipeline{
-    agent{
-            docker{
-                image 'jodha33/seltest'
-	              args "-v /tmp:/tmp"
-            }
+    agent none
+    // agent{
+    //         // docker{
+    //         //     image 'jodha33/seltest'
+    //         // }
 
-    }
+    // }
 
     stages{
         stage('Checkout'){
@@ -19,7 +19,7 @@ pipeline{
             steps{
                 script {
                     echo "Executing test"
-                    sh 'mvn test'
+                    bat 'docker build .'
                 }
             }
         }
